@@ -30,8 +30,17 @@
 		</div>
 		<div class="cart">
 			<h2>Shopping Cart</h2>
-		<div>
+			<ul>
+				<li v-for="item in cart" class="cart-item">
+					<div class="item-title">{{item.title}}</div>
+					<div>{{item.qty}}</div>
+				</li>
+			</ul>
+		<div v-if="total.length">
 			<div>Total: {{total}}</div>
+		</div>
+		<div v-else="total.length" class="empty-cart">
+			No Items in Cart
 		</div>
 	</div>
 	</div>
