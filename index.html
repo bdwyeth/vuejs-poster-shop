@@ -6,10 +6,11 @@
     <title>Vue.js Poster Shop</title>
     <link rel="icon" href="public/favicon.ico" type="image/x-icon">
 
-    <!-- Fonts -->
+    <!-- Fonts (Disabled for shitty internet)
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+	-->
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="public/style.css">
@@ -33,13 +34,13 @@
 			<ul>
 				<li v-for="item in cart" class="cart-item">
 					<div class="item-title">{{item.title}}</div>
-					<div>{{item.qty}}</div>
+					<div>{{item.qty}} x ${{item.price}}</div>
 				</li>
 			</ul>
-		<div v-if="total.length">
-			<div>Total: {{total}}</div>
+		<div v-if="total">
+			<div>Total: ${{total}}</div>
 		</div>
-		<div v-else="total.length" class="empty-cart">
+		<div v-else="!total" class="empty-cart">
 			No Items in Cart
 		</div>
 	</div>

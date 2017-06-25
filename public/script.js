@@ -5,7 +5,7 @@ new Vue({
 		items:[
 			{title: 'Jenga', price: 10},
 			{title: 'Monopoly', price: 15},
-			{title: 'UNO', price: 5},
+			{title: 'UNO', price: 5.5},
 		],
 		cart:[
 
@@ -14,7 +14,7 @@ new Vue({
 	methods: {
 		addItem: function(addedItem){
 			//check if already in cart
-			var itemIndex = _.findIndex(this.cart, function(o){return addedItem.title == o.title })
+			var itemIndex = _.findIndex(this.cart, o => addedItem.title == o.title);
 			//doesnt exist, create qty key
 			if(itemIndex == -1){
 				addedItem.qty = 1;
