@@ -12,6 +12,9 @@ new Vue({
 		]
 	},
 	methods: {
+		onSubmit: function(){
+			console.log('s!!!!!!!!!!!!!!!!!!ub')
+		},
 		addItem: function(addedItem) {
 			//check if already in cart
 			var itemIndex = _.findIndex(this.cart, o => addedItem.title == o.title);
