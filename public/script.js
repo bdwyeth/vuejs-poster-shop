@@ -2,17 +2,18 @@ new Vue({
 	el: '#app',
 	data: {
 		total: 0,
-		items:[
-			{title: 'Jenga', price: 10},
-			{title: 'Monopoly', price: 15},
-			{title: 'UNO', price: 5.5},
-		],
+		items:[],
 		cart:[],
 		search:""
 	},
 	methods: {
 		onSubmit: function(){
-			console.log(this.$http)
+			this.$http
+				.get('/search/'.concat(this.search))
+				.then(function(res){
+					console.log(res.data)
+					this.items = res.data;
+				})
 		},
 		addItem: function(addedItem) {
 			//check if already in cart
