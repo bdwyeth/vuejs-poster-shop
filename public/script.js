@@ -7,13 +7,12 @@ new Vue({
 			{title: 'Monopoly', price: 15},
 			{title: 'UNO', price: 5.5},
 		],
-		cart:[
-
-		]
+		cart:[],
+		search:""
 	},
 	methods: {
 		onSubmit: function(){
-			console.log('s!!!!!!!!!!!!!!!!!!ub')
+			console.log(this.$http)
 		},
 		addItem: function(addedItem) {
 			//check if already in cart
