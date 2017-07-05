@@ -4,7 +4,7 @@ new Vue({
 		total: 0,
 		items:[],
 		cart:[],
-		search:"",
+		search:"muscle car",
 		lastSearch: ""
 	},
 	methods: {
@@ -59,5 +59,8 @@ new Vue({
 	},
 	filters:{
 		currency: (price) => '$' + price.toFixed(2),
+	},
+	mounted: function(){
+		this.onSubmit();
 	}
 });
