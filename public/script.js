@@ -4,15 +4,21 @@ new Vue({
 		total: 0,
 		items:[],
 		cart:[],
-		search:""
+		search:"",
+		lastSearch: ""
 	},
 	methods: {
 		onSubmit: function(){
+
+			//clear previous search results
+			this.items = [];
+
+			//call to the imgur API
 			this.$http
 				.get('/search/'.concat(this.search))
 				.then(function(res){
-					console.log(res.data)
 					this.items = res.data;
+					this.lastSearch = this.search;
 				})
 		},
 		addItem: function(addedItem) {
