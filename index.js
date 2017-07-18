@@ -26,7 +26,7 @@ app.get('/search/:query', function(req, res) {
       res.send(result.data.data.filter(item => !item.is_album && !item.nsfw && !item.animated));
     })
     .catch(function (error) {
-      console.log(error);
+      console.log('ERROR',error);
     })
   ;
 });
